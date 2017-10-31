@@ -74,32 +74,37 @@ positional arguments:
                             
 
 optional arguments:
-
-  -h, --help
-
-    show this help message and exit
-
-  --debug
-
-    Run script in debug mode and just render the debug values
-    given in your projects __init.py__
-    This argument must not be used together with --id
-    Usage: ./make.py yourproject/ --debug
-                            
-  --id ID [ID ...]
-
-    Only render the given ID(s) from your projects schedule.
-    This argument must not be used together with --debug
-    Usage: ./make.py yourproject/ --id 4711 0815 4223 1337
-    To skip all IDs (just generate intro/outro/background files) use it with --id 000000
-                            
+  -h, --help            show this help message and exit
+  --debug               
+                            Run script in debug mode and just render the debug values
+                            given in your projects __init.py__
+                            This argument must not be used together with --id
+                            Usage: ./make.py yourproject/ --debug
+                        	
+  --only-frame ONLY_FRAME
+                        
+                            Only render the given frames (of the intro), e.g. to quickly render snapshots of the tiles frame.
+                            Usage: ./make.py yourproject/ --debug --only-frame 300
+                                   ./make.py yourproject/ --only-frame 300
+                        	
+  --id ID [ID ...]      
+                            Only render the given ID(s) from your projects schedule.
+                            This argument must not be used together with --debug
+                            Usage: ./make.py yourproject/ --id 4711 0815 4223 1337
+                            To skip all IDs (just generate intro/outro/background files) use it with --id 000000
+                        	
   --skip SKIP [SKIP ...]
-
-    Skip outro, pause and/or background files in rendering if not needed.
-    This argument must not be used together with --debug
-    Usage: ./make.py yourproject/ --skip pause out bg
-    Example - only generate outro: ./make.py yourproject/ --skip pause bg
-    Example - only generate pause and background: ./make.py yourproject/ --skip out
+                        
+                            Skip outro, pause and/or background files in rendering if not needed.
+                            This argument must not be used together with --debug
+                            Usage: ./make.py yourproject/ --skip pause out bg
+                            Example - only generate outro: ./make.py yourproject/ --skip pause bg
+                            Example - only generate pause and background: ./make.py yourproject/ --skip out
+                        	
+  --skip-frames SKIP_FRAMES
+                        
+                            Skip first n frames e.g. to quickly rerender during debugging.
+                            Usage: ./make.py yourproject/ --debug --skip-frames 300
 ```
 
 The Frame-Generators
